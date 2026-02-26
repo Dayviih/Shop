@@ -1,0 +1,239 @@
+.loginsignup {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  padding: 80px 20px;
+  min-height: 100vh;
+}
+
+.loginsignup-container {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--border-radius);
+  background: white;
+  margin: auto;
+  padding: 50px;
+  box-shadow: var(--box-shadow);
+  animation: fadeInScale 0.4s ease;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loginsignup-container h1 {
+  color: var(--dark-text);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.loginsignup-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.loginsignup-fields input {
+  height: 50px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 0 20px;
+  border: 2px solid #e0e0e0;
+  outline: none;
+  color: var(--dark-text);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all var(--transition-speed) ease;
+  background: var(--light-bg);
+}
+
+.loginsignup-fields input:focus {
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 4px 12px rgba(7, 245, 78, 0.15);
+}
+
+.loginsignup-fields input::placeholder {
+  color: #999;
+}
+
+.loginsignup-container button {
+  padding: 16px;
+  border-radius: 50px;
+  height: auto;
+  width: 100%;
+  color: white;
+  background: var(--secondary-color);
+  margin-top: 20px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.loginsignup-container button:hover {
+  background: #ff5252;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}
+
+.loginsignup-container button:active {
+  transform: translateY(0);
+}
+
+.loginsignup-login {
+  margin-top: 20px;
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.loginsignup-login span {
+  color: var(--secondary-color);
+  font-weight: 700;
+  cursor: pointer;
+  transition: color var(--transition-speed) ease;
+}
+
+.loginsignup-login span:hover {
+  color: #ff5252;
+}
+
+.loginsignup-agree {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+  gap: 12px;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.loginsignup-agree input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+}
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .loginsignup {
+    padding: 60px 20px;
+  }
+
+  .loginsignup-container {
+    padding: 40px;
+  }
+
+  .loginsignup-container h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .loginsignup {
+    padding: 40px 15px;
+    min-height: auto;
+  }
+
+  .loginsignup-container {
+    max-width: 100%;
+    padding: 30px;
+  }
+
+  .loginsignup-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .loginsignup-fields {
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .loginsignup-fields input {
+    height: 45px;
+    font-size: 0.95rem;
+  }
+
+  .loginsignup-container button {
+    margin-top: 15px;
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  .loginsignup-login {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+
+  .loginsignup-agree {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    gap: 10px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .loginsignup {
+    padding: 30px 10px;
+  }
+
+  .loginsignup-container {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .loginsignup-container h1 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+
+  .loginsignup-fields {
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .loginsignup-fields input {
+    height: 42px;
+    font-size: 0.9rem;
+    padding: 0 15px;
+  }
+
+  .loginsignup-container button {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .loginsignup-login,
+  .loginsignup-agree {
+    font-size: 0.8rem;
+  }
+
+  .loginsignup-agree {
+    gap: 8px;
+  }
+
+  .loginsignup-agree input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+}

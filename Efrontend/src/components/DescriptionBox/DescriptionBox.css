@@ -1,0 +1,158 @@
+.descriptionbox {
+  margin: 80px auto;
+  padding: 0 40px;
+  max-width: 1400px;
+}
+
+.descriptionbox-navigator {
+  display: flex;
+  gap: 0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.descriptionbox-nav-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: white;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.descriptionbox-nav-box:first-child {
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.descriptionbox-nav-box:last-child {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.descriptionbox-nav-box:not(.fade):hover {
+  background: var(--primary-color);
+  color: #1a1a1a;
+  border-color: var(--primary-color);
+}
+
+.descriptionbox-nav-box.fade {
+  background: var(--light-bg);
+  color: #666;
+  border-color: var(--primary-color);
+}
+
+.descriptionbox-description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  padding: 40px;
+  background: white;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .descriptionbox {
+    margin: 60px auto;
+    padding: 0 30px;
+  }
+
+  .descriptionbox-nav-box {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .descriptionbox-description {
+    padding: 30px;
+    gap: 15px;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .descriptionbox {
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+
+  .descriptionbox-navigator {
+    flex-wrap: wrap;
+  }
+
+  .descriptionbox-nav-box {
+    flex: 1 1 calc(50% - 5px);
+    padding: 12px;
+    font-size: 0.85rem;
+    border-radius: 0 !important;
+  }
+
+  .descriptionbox-nav-box:nth-child(1) {
+    border-radius: var(--border-radius) 0 0 0 !important;
+  }
+
+  .descriptionbox-nav-box:nth-child(2) {
+    border-radius: 0 var(--border-radius) 0 0 !important;
+  }
+
+  .descriptionbox-description {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .descriptionbox {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .descriptionbox-navigator {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .descriptionbox-nav-box {
+    flex: 1 1 100%;
+    padding: 12px;
+    font-size: 0.8rem;
+    border-radius: 0 !important;
+  }
+
+  .descriptionbox-nav-box:first-child {
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+  }
+
+  .descriptionbox-nav-box:last-child {
+    border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+  }
+
+  .descriptionbox-description {
+    padding: 15px;
+    font-size: 0.85rem;
+    gap: 12px;
+  }
+}
