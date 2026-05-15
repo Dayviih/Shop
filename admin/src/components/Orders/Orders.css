@@ -1,0 +1,94 @@
+.orders-page {
+  padding: 20px;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(44, 40, 75, 0.08);
+  padding: 24px;
+}
+
+.order-summary,
+.order-customer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.order-items {
+  margin-top: 18px;
+}
+
+.order-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.order-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.order-item p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.order-status-update {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-status-update label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.order-status-update select {
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+}
+
+.status-loading {
+  color: #3f51b5;
+  font-size: 0.95rem;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.orders-refresh-button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 12px;
+  background: #3f51b5;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.orders-refresh-button:hover {
+  background: #2c3e9f;
+}

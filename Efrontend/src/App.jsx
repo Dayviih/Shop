@@ -5,6 +5,8 @@ import Shopcategory from "./pages/Shopcategory"
 import Product from "./pages/Product"
 import Cart from "./pages/Cart"
 import LoginSignup from "./pages/LoginSignup"
+import OrderConfirmation from "./pages/OrderConfirmation"
+import MyOrders from "./pages/MyOrders"
 import Navbar from "./components/navbar/Navbar"
 import Footer from './components/Footer/Footer'
 import men_banner from './components/assets/banner_mens.png'
@@ -22,8 +24,10 @@ function App() {
     <Route path="/product" element={<Product/>}>
        <Route path=":productId" element={<Product/>}/>
     </Route>
-    <Route path="/cart"element={<Cart/>}/>
+    <Route path="/cart" element={<Cart/>}/>
     <Route path="/login" element={<LoginSignup/>}/>
+    <Route path="/order-confirmation/:orderId" element={<OrderConfirmation/>}/>
+    <Route path="/myorders" element={<MyOrders/>}/>
   </Routes>
   <Footer />
  </>

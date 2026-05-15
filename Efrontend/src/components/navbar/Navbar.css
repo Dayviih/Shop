@@ -65,9 +65,15 @@
   color: var(--primary-color);
 }
 
-.nav-menu li a {
+.nav-menu li a,
+.nav-link {
   text-transform: capitalize;
   font-weight: 500;
+  color: inherit;
+}
+
+.nav-link.active {
+  color: var(--primary-color);
 }
 
 .nav-menu hr {
@@ -91,8 +97,29 @@
 .nav-login-cart {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-shrink: 0;
+}
+
+.nav-user {
+  color: var(--dark-text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav-order-link {
+  color: var(--dark-text);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: all var(--transition-speed) ease;
+}
+
+.nav-order-link:hover {
+  background: rgba(63, 81, 181, 0.08);
+  border-color: var(--primary-color);
 }
 
 .nav-login-cart button {

@@ -3,13 +3,14 @@ import { useRef } from 'react'
 import './Navbar.css'
 import logo from '../assets/logo.webp'
 import cart from '../assets/cart_icon.png'
-import { Link } from 'react-router'
+import { Link, NavLink, useNavigate } from 'react-router'
 import { useContext } from 'react'
 import { ShopContext } from '../../Context/ShopContext'
 
 const Navbar = () => {
     const [menu, setMenu] = useState("shop");
-    const { getTotalCartItems } = useContext(ShopContext);
+    const { getTotalCartItems, user, logout } = useContext(ShopContext);
+    const navigate = useNavigate();
     const menuRef = useRef();
     const dropdownRef = useRef();
 
@@ -42,25 +43,29 @@ const Navbar = () => {
 
             <ul ref={menuRef} className='nav-menu'>
                 <li onClick={() => handleMenuClick("shop")}>
-                    <Link to={"/"}>Shop</Link>
-                    {menu === "shop" ? <hr /> : <></>}
+                    <NavLink to={"/"} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Shop</NavLink>
                 </li>
-                <li onClick={() => handleMenuClick("mens")}>
-                    <Link to={"/mens"}>Men</Link>
-                    {menu === "mens" ? <hr /> : <></>}
+                <li onClick={() => handleMenuClick("mens")}> 
+                    <NavLink to={"/mens"} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Men</NavLink>
                 </li>
-                <li onClick={() => handleMenuClick("womens")}>
-                    <Link to={"/womens"}>Women</Link>
-                    {menu === "womens" ? <hr /> : <></>}
+                <li onClick={() => handleMenuClick("womens")}> 
+                    <NavLink to={"/womens"} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Women</NavLink>
                 </li>
-                <li onClick={() => handleMenuClick("kids")}>
-                    <Link to={"/kids"}>Kids</Link>
-                    {menu === "kids" ? <hr /> : <></>}
+                <li onClick={() => handleMenuClick("kids")}> 
+                    <NavLink to={"/kids"} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Kids</NavLink>
                 </li>
             </ul>
 
             <div className='nav-login-cart'>
-                <Link to={"/login"}><button>Login</button></Link>
+                {user ? (
+                    <>
+                        <span className='nav-user'>Hi, {user.name || user.email}</span>
+                        <Link to={'/myorders'} className='nav-order-link'>My Orders</Link>
+                        <button type='button' onClick={() => { logout(); navigate('/'); }}>Logout</button>
+                    </>
+                ) : (
+                    <Link to={"/login"}><button>Login</button></Link>
+                )}
                 <Link to={"/cart"} style={{ position: 'relative' }}>
                     <img src={cart} alt='Shopping Cart' />
                     {getTotalCartItems() > 0 && <div className='nav-cart-count'>{getTotalCartItems()}</div>}
